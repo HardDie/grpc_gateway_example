@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package gateway;
+
+option go_package = "github.com/HardDie/grpc_gateway_example/gateway/pkg/gateway_service";
+
+import "protoc-gen-openapiv2/options/annotations.proto";
+
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+    info : {
+        title : "Gateway"
+        version : "1.0"
+        contact : {
+            name : "HardDie"
+            url : "https://github.com/HardDie"
+            email : "oleg1995sysoev@yandex.ru"
+        }
+    }
+    schemes : [ HTTP, HTTPS ]
+    consumes : "application/json"
+    produces : "application/json"
+};

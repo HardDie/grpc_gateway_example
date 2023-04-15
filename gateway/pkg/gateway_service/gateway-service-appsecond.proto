@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package gateway;
+
+option go_package = "github.com/HardDie/grpc_gateway_example/gateway/pkg/gateway_service";
+
+import "google/api/annotations.proto";
+import "appsecond-service.proto";
+
+service AppSecond
+{
+    rpc Hello(appsecond_service.HelloRequest) returns (appsecond_service.HelloResponse)
+    {
+        option (google.api.http) = {
+            get : "/api/v1/second"
+        };
+    }
+}
