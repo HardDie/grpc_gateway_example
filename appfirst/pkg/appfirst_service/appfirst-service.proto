@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package appfirst_service;
+
+option go_package = "github.com/HardDie/grpc_gateway_example/appfirst/pkg/appfirst_service";
+
+service AppFirstService
+{
+    // Get hello message
+    rpc Hello(HelloRequest) returns (HelloResponse)
+    {
+    }
+}
+
+message HelloRequest
+{
+}
+message HelloResponse
+{
+    string msg = 1;
+}

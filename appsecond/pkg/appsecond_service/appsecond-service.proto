@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package appsecond_service;
+
+option go_package = "github.com/HardDie/grpc_gateway_example/appsecond/pkg/appsecond_service";
+
+service AppSecondService
+{
+    // Get hello message
+    rpc Hello(HelloRequest) returns (HelloResponse)
+    {
+    }
+}
+
+message HelloRequest
+{
+}
+message HelloResponse
+{
+    string msg = 1;
+}
